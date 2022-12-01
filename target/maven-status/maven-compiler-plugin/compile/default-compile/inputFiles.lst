@@ -1,0 +1,17 @@
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/model/UserAccountRepository.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/SeedData.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/model/CategoryRepository.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/controller/HomeController.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/configuration/WebSecurityConfig.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/model/ProductRepository.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/model/UserAccount.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/configuration/PasswordEncoderConfiguration.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/model/Product.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/model/Category.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/services/ProductService.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/services/ShopUserDetailsService.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/services/CategoryService.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/controller/LoginController.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/controller/AdminController.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/configuration/WebMvcConfig.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/ShopApplication.java
