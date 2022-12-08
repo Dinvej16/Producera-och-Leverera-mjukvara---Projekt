@@ -7,19 +7,24 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
+import se.systementor.supershoppen1.shop.model.Newsletter;
 import se.systementor.supershoppen1.shop.model.Product;
 import se.systementor.supershoppen1.shop.services.CategoryService;
+import se.systementor.supershoppen1.shop.services.NewsletterService;
 import se.systementor.supershoppen1.shop.services.ProductService;
 
 @Controller
 public class AdminController {
     private  ProductService productService;
     private CategoryService categoryService;
+    private NewsletterService newsletterService;
     @Autowired
-    public AdminController(ProductService productService, CategoryService categoryService) {
+    public AdminController(ProductService productService, CategoryService categoryService, NewsletterService newsletterService) {
         this.productService = productService;
         this.categoryService = categoryService;
+        this.newsletterService = newsletterService;
     }    
 
     @GetMapping(path="/admin/products")
@@ -51,7 +56,25 @@ public class AdminController {
         return "redirect:/admin/products";
     }
 
-  
+    @GetMapping("admin/newsletters")
+    String newsletter(Model model){
+        model.addAttribute("news", newsletterService.getNewsletter());
+        return "newsletters";
+    }
+
+    @GetMapping("admin/register")
+    String showNewsLetterForm(Model model){
+        Newsletter newsletter = new Newsletter();
+        model.addAttribute("newsletter", newsletter);
+        return "newsletter_form";
+    }
+
+    @PostMapping("admin/register")
+    public String submitForm(@ModelAttribute("newsletter") Newsletter newsletter) {
+        newsletterService.createNewsletter(newsletter);
+        System.out.println(newsletter.getName());
+        return "redirect:/admin/newsletters";
+    }
 
 
 }
