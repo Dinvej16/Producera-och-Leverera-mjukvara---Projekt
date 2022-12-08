@@ -26,6 +26,7 @@ public class AdminController {
         return "admin/products";
     }
 
+    //new 
     @GetMapping (path= "/admin/products/new")
     String showNewProductForm (Model model)
     {
