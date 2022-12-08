@@ -155,6 +155,15 @@ th:fragment="layout (template)">
                                 <a href="/admin/categories">
                                     
                                 Categories</a></li>
+                        <li sec:authorize="hasRole('ADMIN')">
+                            <a href="/admin/register">
+
+                                New Newsletter</a></li>
+                        <li sec:authorize="hasRole('ADMIN')">
+                            <a href="/admin/newsletters">
+
+                                Show Newsletters</a></li>
+                    </ul>
                     </ul>
                     <!-- /NAV -->
                 </div>

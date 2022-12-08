@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<h1>Hello</h1>
+<table>
+    <thead>
+    <tr>
+        <td>Name</td>
+        <td>Message</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="item : ${news}">
+        <td class="middle" th:text="${item.getName()}"></td>
+        <td class="middle" th:text="${item.getMessage()}"></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
