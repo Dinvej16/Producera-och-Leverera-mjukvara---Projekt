@@ -9,14 +9,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.PostMapping;
 import se.systementor.supershoppen1.shop.model.Product;
+import se.systementor.supershoppen1.shop.services.CategoryService;
 import se.systementor.supershoppen1.shop.services.ProductService;
 
 @Controller
 public class AdminController {
     private  ProductService productService;
+    private CategoryService categoryService;
     @Autowired
-    public AdminController(ProductService productService) {
+    public AdminController(ProductService productService, CategoryService categoryService) {
         this.productService = productService;
+        this.categoryService = categoryService;
     }    
 
     @GetMapping(path="/admin/products")
@@ -26,6 +29,14 @@ public class AdminController {
         return "admin/products";
     }
 
+    @GetMapping(path="/admin/categories")
+    String showCategories (Model model)
+    {
+        model.addAttribute("categories", categoryService.getAll());
+        return "admin/categories";
+    }
+
+    //new 
     @GetMapping (path= "/admin/products/new")
     String showNewProductForm (Model model)
     {
