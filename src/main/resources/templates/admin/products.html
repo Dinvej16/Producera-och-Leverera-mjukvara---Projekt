@@ -24,7 +24,7 @@ th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
                 <td th:text="${product.getPrice()}"></td>
                 <td th:text="${product.getStockLevel()}"></td>
                 <td>
-                    <a th:href="@{/admin/product/edit(id=${product.getId()})}">Edit</a>
+                    <a th:href="@{'/admin/product/edit/' + ${product.id} }">Edit</a>
                 </td>
             </tr>
         </tbody>        
