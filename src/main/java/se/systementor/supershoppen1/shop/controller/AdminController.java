@@ -8,7 +8,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import se.systementor.supershoppen1.shop.model.Category;
 import se.systementor.supershoppen1.shop.model.Newsletter;
 import se.systementor.supershoppen1.shop.model.Product;
 import se.systementor.supershoppen1.shop.services.CategoryService;
@@ -77,4 +79,10 @@ public class AdminController {
     }
 
 
+    @GetMapping (path= "/admin/category/new")
+    String showNewCategoryForm (Model model)
+    {
+        model.addAttribute("category", new Category());
+        return "admin/new_category_form";
+    }
 }
