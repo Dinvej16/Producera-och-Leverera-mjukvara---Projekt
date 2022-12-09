@@ -58,6 +58,14 @@ public class AdminController {
         return "redirect:/admin/products";
     }
 
+    @GetMapping(path = "/admin/product/edit/{id}")
+    String showEditForm(@PathVariable("id")Integer id, Model model){
+        Product product = productService.get(id);
+        model.addAttribute("product", product);
+        return "admin/edit_product_form";
+
+    }
+
     @GetMapping("admin/newsletters")
     String newsletter(Model model){
         model.addAttribute("news", newsletterService.getNewsletter());
