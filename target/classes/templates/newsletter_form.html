@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<form action="#" th:action="@{/admin/register}" method="post" th:object="${newsletter}">
+    <label>Name:</label>
+    <input type="text" th:field="*{name}" /><br/>
+
+    <label>Message:</label>
+    <input type="text" th:field="*{message}" /><br/>
+    <button type="submit">Register</button>
+</form>
+
+</body>
+</html>
