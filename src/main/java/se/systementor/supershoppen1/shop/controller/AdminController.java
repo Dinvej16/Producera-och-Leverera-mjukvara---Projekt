@@ -93,4 +93,19 @@ public class AdminController {
         model.addAttribute("category", new Category());
         return "admin/new_category_form";
     }
+
+    @GetMapping(path = "/admin/category/edit/{id}")
+    String showCategoryEditForm(@PathVariable("id")Integer id, Model model){
+        Category category = categoryService.get(id);
+        model.addAttribute("category", category);
+        return "admin/edit_category_form";
+
+    }
+
+    @PostMapping(path = "/admin/category/save")
+    String saveCategory (Category category)
+    {
+        categoryService.save(category);
+        return "redirect:/admin/categories";
+    }
 }
