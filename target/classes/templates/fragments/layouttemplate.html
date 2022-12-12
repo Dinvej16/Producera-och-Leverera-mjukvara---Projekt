@@ -149,20 +149,17 @@ th:fragment="layout (template)">
                     <!-- NAV -->
                     <ul class="main-nav nav navbar-nav">
                         <li sec:authorize="hasRole('ADMIN')">
-                            <a href="/admin/products">
-                            Products</a></li>
+
+                            <a href="/admin/products">Products</a></li>
+
                             <li sec:authorize="hasRole('ADMIN')">
-                                <a href="/admin/categories">
-                                    
-                                Categories</a></li>
-                        <li sec:authorize="hasRole('ADMIN')">
-                            <a href="/admin/register">
+                                <a href="/admin/categories">Categories</a></li>
 
-                                New Newsletter</a></li>
                         <li sec:authorize="hasRole('ADMIN')">
-                            <a href="/admin/newsletters">
+                            <a href="/admin/register">New Newsletter</a></li>
 
-                                Show Newsletters</a></li>
+                        <li sec:authorize="hasRole('ADMIN')">
+                            <a href="/admin/newsletters">Show Newsletters</a></li>
                     </ul>
                     </ul>
                     <!-- /NAV -->
