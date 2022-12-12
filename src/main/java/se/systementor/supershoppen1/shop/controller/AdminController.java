@@ -69,14 +69,14 @@ public class AdminController {
     @GetMapping("admin/newsletters")
     String newsletter(Model model){
         model.addAttribute("news", newsletterService.getNewsletter());
-        return "newsletters";
+        return "admin/newsletters";
     }
 
-    @GetMapping("admin/register")
+    @GetMapping("/admin/register")
     String showNewsLetterForm(Model model){
         Newsletter newsletter = new Newsletter();
         model.addAttribute("newsletter", newsletter);
-        return "newsletter_form";
+        return "admin/newsletter_form";
     }
 
     @PostMapping("admin/register")
@@ -85,6 +85,16 @@ public class AdminController {
         System.out.println(newsletter.getName());
         return "redirect:/admin/newsletters";
     }
+
+    @GetMapping(path = "/admin/newsletter/show/{id}")
+    String showNewsletterInfoForm(@PathVariable("id")Integer id, Model model){
+        Newsletter newsletter = newsletterService.get(id);
+        model.addAttribute("newsletter", newsletter);
+        return "admin/newsletter_info";
+
+    }
+
+
 
 
     @GetMapping (path= "/admin/category/new")
