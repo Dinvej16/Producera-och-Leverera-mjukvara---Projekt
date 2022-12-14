@@ -41,6 +41,7 @@ public class SubscriberService {
         return subscriberRepository.findByEmail(email) != null;
     }
 
+
     public void addSubscriber(String email){
         if(isSubscriber(email)) return;
         Subscriber sub = new Subscriber();
