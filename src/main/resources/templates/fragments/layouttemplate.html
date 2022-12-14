@@ -186,7 +186,7 @@ th:fragment="layout (template)">
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="newsletter">
+                        <div class="newsletter" th:unless="${hideSubscription}">>
                             <p>Sign Up for the <strong>NEWSLETTER</strong></p>
                             <form>
                                 <input class="input" type="email" placeholder="Enter Your Email">

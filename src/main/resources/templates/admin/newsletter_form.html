@@ -8,7 +8,7 @@
 </head>
 <body>
 
-<form action="#" th:action="@{/admin/register}" method="post" th:object="${newsletter}">
+<form action="#" th:action="@{/admin/register}" method="post" th:object="${newsletter}" th:unless="${hideSubscription}">>
     <label>Name:</label>
     <input type="text" th:field="*{name}" /><br/>
 
