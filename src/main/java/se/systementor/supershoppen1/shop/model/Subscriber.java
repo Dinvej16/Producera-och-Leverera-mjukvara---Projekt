@@ -10,8 +10,6 @@ public class Subscriber {
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-
-
     private Integer subscriberId;
     private String email;
 
