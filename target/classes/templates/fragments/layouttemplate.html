@@ -187,41 +187,7 @@ th:fragment="layout (template)">
                 <div class="row">
                     <div class="col-md-12">
                         <div class="newsletter" th:unless="${hideSubscription}">
-
-                            <form>
-
-                                <div id="my_form">
-                                    <p>Sign Up for the <strong>NEWSLETTER</strong></p>
-                                    <input class="input" type="email" placeholder="Enter Your Email">
-                                    <button id="nextStep" class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
-
-
-                                </div>
-                            </form>
-                            <div id="thank_you" style="display: none;">
-                                <h2>You have successfully registered</h2>
-                                <button id="close">Close</button>
-
-
-                            </div>
-                            <script>
-                                var nextStep = document.querySelector('#nextStep');
-                                var close = document.querySelector('#close');
-
-                                nextStep.addEventListener('click', function (e) {
-                                    e.preventDefault();
-
-                                    document.getElementById('my_form').style.display = 'none';
-
-
-                                    document.getElementById('thank_you').style.display = 'block';
-                                    close.addEventListener('click', function (e) {
-                                        e.preventDefault();
-                                        document.getElementById('thank_you').style.display = 'none';
-                                });});
-
-                            </script>
-
+                            <a th:href="@{'/register_succsess' }">subscribe</a>
 
                             <ul class="newsletter-follow">
                                 <li>
@@ -240,6 +206,7 @@ th:fragment="layout (template)">
                         </div>
                     </div>
                 </div>
+
                 <!-- /row -->
             </div>
             <!-- /container -->
@@ -348,6 +315,7 @@ th:fragment="layout (template)">
         <script src="/scripts/jquery.zoom.min.js"></script>
         <script src="/scripts/main.js" ></script>
         @RenderSection("Scripts", false)
+
     </body>
     </html>
     
