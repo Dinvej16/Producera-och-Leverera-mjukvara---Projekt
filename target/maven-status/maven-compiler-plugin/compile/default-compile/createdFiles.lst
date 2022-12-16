@@ -1,4 +1,6 @@
+se/systementor/supershoppen1/shop/services/SubscriberService.class
 se/systementor/supershoppen1/shop/services/ShopUserDetailsService.class
+se/systementor/supershoppen1/shop/model/NewsletterRepository.class
 se/systementor/supershoppen1/shop/model/Category.class
 se/systementor/supershoppen1/shop/model/CategoryRepository.class
 se/systementor/supershoppen1/shop/model/Product.class
@@ -8,10 +10,14 @@ se/systementor/supershoppen1/shop/controller/AdminController.class
 se/systementor/supershoppen1/shop/SeedData.class
 se/systementor/supershoppen1/shop/model/UserAccount.class
 se/systementor/supershoppen1/shop/model/ProductRepository.class
+se/systementor/supershoppen1/shop/model/SubscriberRepository.class
 se/systementor/supershoppen1/shop/services/ProductService.class
 se/systementor/supershoppen1/shop/configuration/WebSecurityConfig.class
 se/systementor/supershoppen1/shop/controller/LoginController.class
 se/systementor/supershoppen1/shop/configuration/PasswordEncoderConfiguration.class
 se/systementor/supershoppen1/shop/controller/HomeController.class
 se/systementor/supershoppen1/shop/ShopApplication.class
+se/systementor/supershoppen1/shop/model/Subscriber.class
+se/systementor/supershoppen1/shop/services/NewsletterService.class
+se/systementor/supershoppen1/shop/model/Newsletter.class
 se/systementor/supershoppen1/shop/model/UserAccountRepository.class
