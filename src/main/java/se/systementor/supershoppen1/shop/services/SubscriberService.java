@@ -35,6 +35,20 @@ public class SubscriberService {
     public void save (Subscriber added1) { subscriberRepository.save(added1); }
 
 
+
+
+    public boolean isSubscriber(String email){
+        return subscriberRepository.findByEmail(email) != null;
+    }
+
+
+    public void addSubscriber(String email){
+        if(isSubscriber(email)) return;
+        Subscriber sub = new Subscriber();
+        sub.setEmail(email);
+        subscriberRepository.save(sub);
+    }
+
 }
 
 

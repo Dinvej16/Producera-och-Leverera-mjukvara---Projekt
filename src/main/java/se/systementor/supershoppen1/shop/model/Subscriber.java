@@ -7,27 +7,36 @@ import javax.persistence.Id;
 
 @Entity
 public class Subscriber {
+    private String email;
 
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
+    private Integer subscriberId;
 
-    private int subscriberId;
-    private String email;
 
-    public int getSubscriberId() {
+    public Integer getSubscriberId() {
         return subscriberId;
     }
 
-    public void setSubscriberId(int subscriberId) {
+    public void setSubscriberId(Integer subscriberId) {
         this.subscriberId = subscriberId;
     }
 
-    public String getEmail() {
+
+    public void setEmail(String v)
+    {
+        email = v;
+    }
+
+
+    public String getEmail()
+    {
         return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
-    }
+
+
 
 }
+
+

@@ -180,13 +180,13 @@ th:fragment="layout (template)">
         </div>
         <!-- /SECTION -->
         <!-- NEWSLETTER -->
-        <div id="newsletter" class="section">
+            <div id="newsletter" class="section" th:unless="${hideSubscription}">
             <!-- container -->
             <div class="container">
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="newsletter">
+                        <div class="newsletter" th:unless="${hideSubscription}">>
                             <p>Sign Up for the <strong>NEWSLETTER</strong></p>
                             <form>
                                 <input class="input" type="email" placeholder="Enter Your Email">

@@ -8,13 +8,11 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import se.systementor.supershoppen1.shop.configuration.PasswordEncoderConfiguration;
-import se.systementor.supershoppen1.shop.model.Category;
-import se.systementor.supershoppen1.shop.model.Product;
-import se.systementor.supershoppen1.shop.model.UserAccount;
-import se.systementor.supershoppen1.shop.model.UserAccountRepository;
+import se.systementor.supershoppen1.shop.model.*;
 import se.systementor.supershoppen1.shop.services.CategoryService;
 import se.systementor.supershoppen1.shop.services.ProductService;
 import se.systementor.supershoppen1.shop.services.ShopUserDetailsService;
+import se.systementor.supershoppen1.shop.services.SubscriberService;
 
 @Component
 public class SeedData implements CommandLineRunner {
@@ -23,12 +21,16 @@ public class SeedData implements CommandLineRunner {
     private final ShopUserDetailsService userDetailsService;
     private final PasswordEncoderConfiguration encoderConfig;
 
+    private final SubscriberService subscriberService;
+
     @Autowired
-    public SeedData(ProductService productService, CategoryService categoryService, ShopUserDetailsService userDetailsService, PasswordEncoderConfiguration encoderConfig) {
+
+    public SeedData(ProductService productService, CategoryService categoryService, ShopUserDetailsService userDetailsService, PasswordEncoderConfiguration encoderConfig, SubscriberService subscriberService) {
         this.productService = productService;
         this.categoryService = categoryService;
         this.userDetailsService = userDetailsService;
         this.encoderConfig = encoderConfig;
+        this.subscriberService = subscriberService;
     }
 
     @Override
@@ -39,6 +41,7 @@ public class SeedData implements CommandLineRunner {
         exampleCategories();
         exampleProducts();
         exampleUsers();
+        exampleSubscribers();
     }
 
 
@@ -48,6 +51,8 @@ public class SeedData implements CommandLineRunner {
         }
         return -1;
     }
+
+
 
     private void exampleCategories(){
         var existing = categoryService.getAll();
@@ -67,6 +72,9 @@ public class SeedData implements CommandLineRunner {
         addUser(existingUsers, "user@user.se", "ROLE_USER");
 
     }
+
+
+
 
 
     private void exampleProducts(){
@@ -152,6 +160,11 @@ public class SeedData implements CommandLineRunner {
         addProduct(existingProducts, findCatId(existingCats,"Condiments") ,"Original Frankfurter grüne Soße",13,32,"Fantastic");    
     }
 
+    private void exampleSubscribers(){
+        var existingSubscribers = subscriberService.getAll();
+        addSubscriber(existingSubscribers,"user@user.se");
+    }
+
     private void addUser(List<UserAccount> existingUsers, String email, String groups) {
         for(UserAccount acc: existingUsers){
             if(acc.getEmail().equals(email)) return;
@@ -159,6 +172,14 @@ public class SeedData implements CommandLineRunner {
         UserAccount acc = new UserAccount(email, encoderConfig.passwordEncoder().encode("stefan123") , groups);
         userDetailsService.save(acc);
         
+    }
+
+
+    private void addSubscriber(List<Subscriber> existingSubscribers, String email) {
+        for (Subscriber cat : existingSubscribers) {
+            if (cat.getEmail().equals(email)) return;
+        }
+        subscriberService.addSubscriber(email);
     }
 
 
