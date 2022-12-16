@@ -186,12 +186,43 @@ th:fragment="layout (template)">
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="newsletter" th:unless="${hideSubscription}">>
-                            <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                        <div class="newsletter" th:unless="${hideSubscription}">
+
                             <form>
-                                <input class="input" type="email" placeholder="Enter Your Email">
-                                <button class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+
+                                <div id="my_form">
+                                    <p>Sign Up for the <strong>NEWSLETTER</strong></p>
+                                    <input class="input" type="email" placeholder="Enter Your Email">
+                                    <button id="nextStep" class="newsletter-btn"><i class="fa fa-envelope"></i> Subscribe</button>
+
+
+                                </div>
                             </form>
+                            <div id="thank_you" style="display: none;">
+                                <h2>You have successfully registered</h2>
+                                <button id="close">Close</button>
+
+
+                            </div>
+                            <script>
+                                var nextStep = document.querySelector('#nextStep');
+                                var close = document.querySelector('#close');
+
+                                nextStep.addEventListener('click', function (e) {
+                                    e.preventDefault();
+
+                                    document.getElementById('my_form').style.display = 'none';
+
+
+                                    document.getElementById('thank_you').style.display = 'block';
+                                    close.addEventListener('click', function (e) {
+                                        e.preventDefault();
+                                        document.getElementById('thank_you').style.display = 'none';
+                                });});
+
+                            </script>
+
+
                             <ul class="newsletter-follow">
                                 <li>
                                     <a href="#"><i class="fa fa-facebook"></i></a>
