@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import se.systementor.supershoppen1.shop.model.Category;
 import se.systementor.supershoppen1.shop.model.Newsletter;
 import se.systementor.supershoppen1.shop.model.Product;
+import se.systementor.supershoppen1.shop.services.ArticleService;
 import se.systementor.supershoppen1.shop.services.CategoryService;
 import se.systementor.supershoppen1.shop.services.NewsletterService;
 import se.systementor.supershoppen1.shop.services.ProductService;
@@ -22,11 +23,13 @@ public class AdminController {
     private  ProductService productService;
     private CategoryService categoryService;
     private NewsletterService newsletterService;
+    private ArticleService articleService;
     @Autowired
-    public AdminController(ProductService productService, CategoryService categoryService, NewsletterService newsletterService) {
+    public AdminController(ProductService productService, CategoryService categoryService, NewsletterService newsletterService, ArticleService articleService) {
         this.productService = productService;
         this.categoryService = categoryService;
         this.newsletterService = newsletterService;
+        this.articleService = articleService;
     }    
 
     @GetMapping(path="/admin/products")
@@ -117,5 +120,10 @@ public class AdminController {
     {
         categoryService.save(category);
         return "redirect:/admin/categories";
+    }
+    @GetMapping("admin/article")
+    String getArticle (Model model){
+        model.addAttribute("articles", articleService.getTenLatestArticleList());
+        return "admin/articles";
     }
 }
