@@ -121,7 +121,7 @@ public class AdminController {
         categoryService.save(category);
         return "redirect:/admin/categories";
     }
-    @GetMapping("admin/article")
+    @GetMapping("admin/articles")
     String getArticle (Model model){
         model.addAttribute("articles", articleService.getTenLatestArticleList());
         return "admin/articles";
