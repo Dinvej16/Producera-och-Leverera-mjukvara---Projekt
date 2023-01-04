@@ -41,8 +41,7 @@ public class HomeController {
                 model.addAttribute("hideSubscription", false);
 
             }
-
-
+            model.addAttribute("products", productService.getTenLatestProducts());
             return "home";
         }
 
