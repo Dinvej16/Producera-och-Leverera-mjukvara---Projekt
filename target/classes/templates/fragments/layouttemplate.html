@@ -51,7 +51,7 @@ th:fragment="layout (template)">
                         <!-- LOGO -->
                         <div class="col-md-3">
                             <div class="header-logo">
-                                <a href="#" class="logo">
+                                <a href="/" class="logo">
                                     <img src="/images/logo.png" alt="">
                                 </a>
                             </div>
@@ -160,8 +160,6 @@ th:fragment="layout (template)">
 
                         <li sec:authorize="hasRole('ADMIN')">
                             <a href="/admin/newsletters">Show Newsletters</a></li>
-
-                        <li> <a href="/contact">Contact Us</a></li>
                     </ul>
                     </ul>
                     <!-- /NAV -->
@@ -188,7 +186,7 @@ th:fragment="layout (template)">
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="newsletter" th:unless="${hideSubscription}">>
+                        <div class="newsletter" th:unless="${hideSubscription}">
                             <p>Sign Up for the <strong>NEWSLETTER</strong></p>
                             <form>
                                 <input class="input" type="email" placeholder="Enter Your Email">
@@ -256,7 +254,7 @@ th:fragment="layout (template)">
                                 <h3 class="footer-title">Information</h3>
                                 <ul class="footer-links">
                                     <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
                                     <li><a href="#">Orders and Returns</a></li>
                                     <li><a href="#">Terms & Conditions</a></li>
