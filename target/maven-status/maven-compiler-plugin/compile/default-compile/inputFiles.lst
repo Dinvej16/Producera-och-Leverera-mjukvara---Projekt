@@ -12,6 +12,7 @@
 /Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/services/NewsletterService.java
 /Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/configuration/PasswordEncoderConfiguration.java
 /Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/model/NewsletterRepository.java
+/Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/controller/ContactController.java
 /Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/model/Product.java
 /Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/model/Category.java
 /Users/dinovejzovic/Documents/GitHub/Producera-och-Leverera-mjukvara---Projekt/src/main/java/se/systementor/supershoppen1/shop/services/ProductService.java

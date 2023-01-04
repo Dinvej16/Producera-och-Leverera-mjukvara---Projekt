@@ -2,6 +2,7 @@ se/systementor/supershoppen1/shop/services/SubscriberService.class
 se/systementor/supershoppen1/shop/services/ShopUserDetailsService.class
 se/systementor/supershoppen1/shop/model/NewsletterRepository.class
 se/systementor/supershoppen1/shop/model/Category.class
+se/systementor/supershoppen1/shop/controller/ContactController.class
 se/systementor/supershoppen1/shop/model/CategoryRepository.class
 se/systementor/supershoppen1/shop/model/Product.class
 se/systementor/supershoppen1/shop/configuration/WebMvcConfig.class

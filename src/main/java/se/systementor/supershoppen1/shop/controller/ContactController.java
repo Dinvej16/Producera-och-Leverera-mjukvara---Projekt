@@ -41,7 +41,7 @@ public class ContactController {
         mailContent += "<p><b>Content: </b>" + content + "</p>";
 
 
-        helper.setFrom("amya.gutmann@ethereal.email");
+        helper.setFrom("amya.gutmann@ethereal.email", "SteffanShoppen Contact");
         helper.setTo("info@systementor.se");
         helper.setSubject(mailSubject);
         helper.setText(mailContent, true);
