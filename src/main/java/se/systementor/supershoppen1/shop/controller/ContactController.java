@@ -25,7 +25,7 @@ public class ContactController {
     }
 
     @PostMapping("/contact")
-    public String submitContact(HttpServletRequest request) throws MessagingException, UnsupportedEncodingException {
+    public String submitContact(HttpServletRequest request) throws MessagingException {
         String fullname = request.getParameter("fullname");
         String email = request.getParameter("email");
         String subject = request.getParameter("subject");
@@ -41,7 +41,7 @@ public class ContactController {
         mailContent += "<p><b>Content: </b>" + content + "</p>";
 
 
-        helper.setFrom("amya.gutmann@ethereal.email", "SteffanShoppen Contact");
+        helper.setFrom("amya.gutmann@ethereal.email");
         helper.setTo("info@systementor.se");
         helper.setSubject(mailSubject);
         helper.setText(mailContent, true);
