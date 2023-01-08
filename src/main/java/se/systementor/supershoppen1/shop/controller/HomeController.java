@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 
+import org.springframework.web.bind.annotation.PathVariable;
 import se.systementor.supershoppen1.shop.model.Product;
 import se.systementor.supershoppen1.shop.services.ProductService;
 import se.systementor.supershoppen1.shop.services.SubscriberService;
@@ -44,6 +45,12 @@ public class HomeController {
             model.addAttribute("products", productService.getTenLatestProducts());
             return "home";
         }
+
+    @GetMapping("/product/{id}")
+    String getProductById(@PathVariable("id") Integer id, Model model){
+        model.addAttribute("product", productService.getById(id));
+        return "product-page";
+    }
 
     @GetMapping(path="/test2")
     List<Product> getAll(){

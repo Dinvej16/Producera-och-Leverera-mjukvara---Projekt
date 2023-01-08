@@ -39,6 +39,15 @@ public class ProductService {
         return l;
     }
 
+    public Product getById(Integer id){
+        for(Product product : getTenLatestProducts()){
+            if (product.getId().equals(id)){
+                return product;
+            }
+        }
+        return null;
+    }
+
     public Product get(Integer id){
         return repository.findById(id).get();
     }

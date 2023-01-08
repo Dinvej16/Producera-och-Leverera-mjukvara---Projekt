@@ -32,6 +32,7 @@ th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
                 <!-- /section title -->
                 <!-- Products tab & slick -->
                 <div th:each="item : ${products}">
+
                 <div class="col-md-12">
                     <div class="row">
                         <div class="products-tabs">
@@ -45,6 +46,7 @@ th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
                                             <div class="product-label">
                                                 <span class="sale">-30%</span>
                                                 <span class="new">NEW</span>
+                                                <a  th:href="@{'product/' + ${item.id} }" >AAAAA</a>
                                             </div>
                                         </div>
                                         <div class="product-body">
@@ -65,6 +67,7 @@ th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
+
                                             <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                         </div>
                                     </div>
@@ -78,6 +81,7 @@ th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
                 <!-- Products tab & slick -->
             </div>
             <!-- /row -->
+
         </div>
        </div>
         <!-- /container -->
