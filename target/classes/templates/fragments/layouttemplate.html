@@ -179,6 +179,11 @@ th:fragment="layout (template)">
             <!-- /container -->
         </div>
         <!-- /SECTION -->
+
+        <div th:each="item : ${articles}">
+            <a th:text="${item.getTitle()}" th:href="@{'article/' + ${item.id} }"></a>
+        </div>
+
         <!-- NEWSLETTER -->
             <div id="newsletter" class="section" th:unless="${hideSubscription}">
             <!-- container -->

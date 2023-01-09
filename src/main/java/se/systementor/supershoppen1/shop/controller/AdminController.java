@@ -23,13 +23,13 @@ public class AdminController {
     private  ProductService productService;
     private CategoryService categoryService;
     private NewsletterService newsletterService;
-    private ArticleService articleService;
+
     @Autowired
-    public AdminController(ProductService productService, CategoryService categoryService, NewsletterService newsletterService, ArticleService articleService) {
+    public AdminController(ProductService productService, CategoryService categoryService, NewsletterService newsletterService) {
         this.productService = productService;
         this.categoryService = categoryService;
         this.newsletterService = newsletterService;
-        this.articleService = articleService;
+
     }    
 
     @GetMapping(path="/admin/products")
@@ -121,9 +121,5 @@ public class AdminController {
         categoryService.save(category);
         return "redirect:/admin/categories";
     }
-    @GetMapping("admin/articles")
-    String getArticle (Model model){
-        model.addAttribute("articles", articleService.getTenLatestArticleList());
-        return "admin/articles";
-    }
+
 }

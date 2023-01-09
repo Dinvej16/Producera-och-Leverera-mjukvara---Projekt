@@ -2,6 +2,8 @@ package se.systementor.supershoppen1.shop.services;
 
 import com.fasterxml.jackson.databind.JsonNode;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.client.RestTemplate;
 import se.systementor.supershoppen1.shop.model.Article;
 
@@ -33,7 +35,17 @@ public class ArticleService {
         return articles;
     }
     public List<Article> getTenLatestArticleList() {
-        List<Article> articlesLatest = getArticleList().stream().sorted(comparing(Article::getId , comparing(Math::abs)).reversed()).limit(10).collect(Collectors.toList());
+        List<Article> articlesLatest = getArticleList().stream().sorted(comparing(Article::getId , comparing(Math::abs)).reversed()).limit(2).collect(Collectors.toList());
         return articlesLatest;
+    }
+
+    @GetMapping("/articles/{id}")
+    public Article getArticleByID(@PathVariable("id") Integer id) {
+        for(Article article : getTenLatestArticleList()){
+            if(article.getId().equals(id)){
+                return article;
+            }
+        }
+        return null;
     }
 }
