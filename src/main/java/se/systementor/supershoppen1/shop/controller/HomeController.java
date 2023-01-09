@@ -49,18 +49,19 @@ public class HomeController {
             return "home";
         }
 
-    @GetMapping("/article/{id}")
-    String getArticles(Model model, @PathVariable("id") Integer id){
-        model.addAttribute("article", articleService.getArticleByID(id));
-        return "articles";
-    }
+
+
 
     @GetMapping(path="/test2")
     List<Product> getAll(){
         return productService.getAll();
     }
 
-
+    @GetMapping("/article/{id}")
+    String getArticles(Model model, @PathVariable("id") Integer id){
+        model.addAttribute("article", articleService.getArticleByID(id));
+        return "articles";
+    }
 
 
 }
