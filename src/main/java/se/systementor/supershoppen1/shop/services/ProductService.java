@@ -2,11 +2,14 @@ package se.systementor.supershoppen1.shop.services;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.stereotype.Service;
 
 import se.systementor.supershoppen1.shop.model.Product;
 import se.systementor.supershoppen1.shop.model.ProductRepository;
+
+import static java.util.Comparator.comparing;
 
 @Service
 public class ProductService {
@@ -25,6 +28,24 @@ public class ProductService {
             l.add(r);
         }
         return l;
+    }
+
+    public List<Product> getTenLatestProducts(){
+        List<Product> l = getAll()
+                .stream()
+                .sorted(comparing(Product::getId, comparing(Math::abs)).reversed())
+                .limit(10)
+                .collect(Collectors.toList());
+        return l;
+    }
+
+    public Product getById(Integer id){
+        for(Product product : getTenLatestProducts()){
+            if (product.getId().equals(id)){
+                return product;
+            }
+        }
+        return null;
     }
 
     public Product get(Integer id){
