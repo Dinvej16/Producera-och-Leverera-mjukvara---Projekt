@@ -61,10 +61,10 @@ public class HomeController {
     }
 
     @GetMapping("/article/{id}")
-    String getArticles(Model model, @PathVariable("id") Integer id){
+    String getArticlesById(Model model, @PathVariable("id") Integer id){
         model.addAttribute("article", articleService.getArticleByID(id));
         model.addAttribute("articles", articleService.getArticleList());
-        
+
 
         return "articles";
     }
