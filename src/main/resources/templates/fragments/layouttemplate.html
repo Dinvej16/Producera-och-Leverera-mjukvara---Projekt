@@ -179,6 +179,7 @@ th:fragment="layout (template)">
             <!-- /container -->
         </div>
         <!-- /SECTION -->
+
         <!-- NEWSLETTER -->
             <div id="newsletter" class="section" th:unless="${hideSubscription}">
             <!-- container -->
@@ -214,6 +215,16 @@ th:fragment="layout (template)">
             <!-- /container -->
         </div>
         <!-- /NEWSLETTER -->
+
+        <!--KRISINFO -->
+        <div class="article-box">
+            <h3 class="article-h3">News</h3>
+            <div th:each="item : ${articles}">
+                <a class="article-a" th:text="${item.getTitle()}" th:href="@{'/article/' + ${item.id} }"></a>
+            </div>
+        </div>
+
+
         <!-- FOOTER -->
         <footer id="footer">
             <!-- top footer -->
