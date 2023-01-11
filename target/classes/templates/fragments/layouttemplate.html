@@ -89,40 +89,21 @@ th:fragment="layout (template)">
                                     <div class="cart-dropdown">
                                         <div class="cart-list">
                                             <div class="product-widget">
-                                                <div class="product-img">
-                                                    <img src="/images/product01.png" alt="">
+                                                <div th:each="item : ${products.subList(0,2)}">
+                                                                <!-- tab -->
+                                                                        <!-- product -->
+                                                                        <div class="product">
+                                                                                <div class="product-label">
+                                                                                    <a  th:href="@{'product/' + ${item.id} }" ></a>
+                                                                                </div>
+                                                                                </div>
+                                                        <small class="product-name"><a href="#" th:text="${item.getName()}"></a></small>
+                                                        <small class="product-price" th:text="${item.getPrice()}"><del class="product-old-price"></del></small>
+                                                    </div>
+                                                    <div class="cart-btns">
+                                                    <a href="#">View Cart</a>
+                                                    <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
                                                 </div>
-                                                <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                    <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-                                                </div>
-                                                <button class="delete"><i class="fa fa-close"></i></button>
-                                            </div>
-
-                                            <div class="product-widget">
-                                                <div class="product-img">
-                                                    <img src="/images/product02.png" alt="">
-                                                </div>
-                                                <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                    <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-                                                </div>
-                                                <button class="delete"><i class="fa fa-close"></i></button>
-                                            </div>
-                                        </div>
-                                        <div class="cart-summary">
-                                            <small>3 Item(s) selected</small>
-                                            <h6>TOTAL: $2940.00</h6>
-                                            <medium>3% discount   -$88.20 </medium>
-                                            <h5>SUBTOTAL: $2851.80</h5>
-
-                                        </div>
-                                        <div class="cart-btns">
-                                            <a href="#">View Cart</a>
-                                            <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
-                                        </div>
-                                    </div>
-                                </div>
                                 <!-- /Cart -->
                                 <!-- Menu Toogle -->
                                 <div class="menu-toggle">
