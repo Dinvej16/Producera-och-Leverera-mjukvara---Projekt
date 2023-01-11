@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class ProductController {
 
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    @RequestMapping(value = "/cart", method = RequestMethod.GET)
     public double calculateDiscount(@RequestParam("totalOrderAmount") double totalOrderAmount,
                                     @RequestParam("productCategory") String productCategory) {
         if (productCategory.equals("Beverages")) {
