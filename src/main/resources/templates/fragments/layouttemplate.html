@@ -51,7 +51,7 @@ th:fragment="layout (template)">
                         <!-- LOGO -->
                         <div class="col-md-3">
                             <div class="header-logo">
-                                <a href="#" class="logo">
+                                <a href="/" class="logo">
                                     <img src="/images/logo.png" alt="">
                                 </a>
                             </div>
@@ -84,7 +84,7 @@ th:fragment="layout (template)">
                                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                         <i class="fa fa-shopping-cart"></i>
                                         <span>Your Cart</span>
-                                        <div class="qty">3</div>
+                                        <div class="qty">2</div>
                                     </a>
                                     <div class="cart-dropdown">
                                         <div class="cart-list">
@@ -93,26 +93,17 @@ th:fragment="layout (template)">
                                                     <img src="/images/product01.png" alt="">
                                                 </div>
                                                 <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                    <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
+                                                    <h3 class="product-name"><a href="#">Original Frankfurter grüne Soßere</a></h3>
+                                                    <h4 class="product-price"><span class="qty">3x</span>$13.00</h4>
                                                 </div>
                                                 <button class="delete"><i class="fa fa-close"></i></button>
                                             </div>
     
-                                            <div class="product-widget">
-                                                <div class="product-img">
-                                                    <img src="/images/product02.png" alt="">
-                                                </div>
-                                                <div class="product-body">
-                                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                                    <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-                                                </div>
-                                                <button class="delete"><i class="fa fa-close"></i></button>
-                                            </div>
+
                                         </div>
                                         <div class="cart-summary">
                                             <small>3 Item(s) selected</small>
-                                            <h5>SUBTOTAL: $2940.00</h5>
+                                            <h5>SUBTOTAL: $39.00</h5>
                                         </div>
                                         <div class="cart-btns">
                                             <a href="#">View Cart</a>
@@ -179,6 +170,7 @@ th:fragment="layout (template)">
             <!-- /container -->
         </div>
         <!-- /SECTION -->
+
         <!-- NEWSLETTER -->
             <div id="newsletter" class="section" th:unless="${hideSubscription}">
             <!-- container -->
@@ -186,7 +178,7 @@ th:fragment="layout (template)">
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12">
-                        <div class="newsletter" th:unless="${hideSubscription}">>
+                        <div class="newsletter" th:unless="${hideSubscription}">
                             <p>Sign Up for the <strong>NEWSLETTER</strong></p>
                             <form>
                                 <input class="input" type="email" placeholder="Enter Your Email">
@@ -214,6 +206,16 @@ th:fragment="layout (template)">
             <!-- /container -->
         </div>
         <!-- /NEWSLETTER -->
+
+        <!--KRISINFO -->
+        <div class="article-box">
+            <h3 class="article-h3">News</h3>
+            <div th:each="item : ${articles}">
+                <a class="article-a" th:text="${item.getTitle()}" th:href="@{'/article/' + ${item.id} }"></a>
+            </div>
+        </div>
+
+
         <!-- FOOTER -->
         <footer id="footer">
             <!-- top footer -->
@@ -254,7 +256,7 @@ th:fragment="layout (template)">
                                 <h3 class="footer-title">Information</h3>
                                 <ul class="footer-links">
                                     <li><a href="#">About Us</a></li>
-                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="/contact">Contact Us</a></li>
                                     <li><a href="#">Privacy Policy</a></li>
                                     <li><a href="#">Orders and Returns</a></li>
                                     <li><a href="#">Terms & Conditions</a></li>

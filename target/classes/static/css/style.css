@@ -1163,6 +1163,8 @@ textarea.input {
 
 .products-slick .product.slick-slide {
   margin: 15px;
+
+
 }
 
 .products-tabs>.tab-pane {
@@ -1173,6 +1175,7 @@ textarea.input {
   overflow-y: hidden;
   padding-bottom: 60px;
   margin-bottom: -60px;
+
 }
 
 .products-tabs>.tab-pane.active {
@@ -2199,4 +2202,21 @@ textarea.input {
 
 .error {
   color:#ef233c;
+}
+
+.article-box{
+  background-color: #ef233c;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 25px;
+
+}
+
+.article-h3 {
+  color: white;
+}
+
+.article-a{
+  color: white;
 }
