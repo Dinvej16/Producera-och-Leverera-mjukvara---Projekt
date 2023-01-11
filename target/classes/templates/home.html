@@ -46,13 +46,14 @@ th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
                                             <div class="product-label">
                                                 <span class="sale">-30%</span>
                                                 <span class="new">NEW</span>
-                                                <a  th:href="@{'product/' + ${item.id} }" >AAAAA</a>
+                                                <a  th:href="@{'product/' + ${item.id} }" ></a>
                                             </div>
                                         </div>
                                         <div class="product-body">
                                             <p class="product-category">Category</p>
                                             <h3 class="product-name"><a href="#" th:text="${item.getName()}"></a></h3>
-                                            <h4 class="product-price" th:text="${item.getPrice()}"><del class="product-old-price"></del></h4>
+
+                                            <h4 class="product-price" th:text="'$'+${item.getPrice()}"><del class="product-old-price"></del></h4>
                                             <div class="product-rating">
                                                 <i class="fa fa-star"></i>
                                                 <i class="fa fa-star"></i>

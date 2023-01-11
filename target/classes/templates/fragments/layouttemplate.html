@@ -84,24 +84,31 @@ th:fragment="layout (template)">
                                     <a class="dropdown-toggle" data-toggle="dropdown" aria-expanded="true">
                                         <i class="fa fa-shopping-cart"></i>
                                         <span>Your Cart</span>
-                                        <div class="qty">3</div>
+                                        <div class="qty">5</div>
                                     </a>
                                     <div class="cart-dropdown">
                                         <div class="cart-list">
                                             <div class="product-widget">
-                                                <div th:each="item : ${products.subList(0,2)}">
-                                                                <!-- tab -->
-                                                                        <!-- product -->
-                                                                        <div class="product">
-                                                                                <div class="product-label">
-                                                                                    <a  th:href="@{'product/' + ${item.id} }" ></a>
-                                                                                </div>
-                                                                                </div>
-                                                        <small class="product-name"><a href="#" th:text="${item.getName()}"></a></small>
-                                                        <small class="product-price" th:text="${item.getPrice()}"><del class="product-old-price"></del></small>
+                                                <h4>Products in cart</h4>
+                                                <div th:with="total=64">
+                                                    <div th:each="item : ${products.subList(0, 5)}">
+                                                        <!-- tab -->
+                                                        <div class="product">
+                                                            <div class="product-label">
+                                                                <a th:href="@{'product/' + ${item.id}}"></a>
+                                                            </div>
+                                                        </div>
+                                                        <medium class="product-name"><a href="#" th:text="${item.getName()}"></a></medium>
+                                                        <large class="product-price" th:text="'$' + ${item.getPrice()}" th:with="total=${total + item.getPrice()}"></large>
                                                     </div>
+
+                                                  <h4> <strong >Total:</strong> <strong  th:text="'$' + ${total}"></strong></h4>
+                                                </div>
+
+
+                                            </div>
                                                     <div class="cart-btns">
-                                                    <a href="#">View Cart</a>
+                                                    <a >View Cart</a>
                                                     <a href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
                                                 </div>
                                 <!-- /Cart -->

@@ -543,7 +543,7 @@ textarea.input {
 
 .cart-dropdown {
   position: absolute;
-  height: 130px;
+  height: 230px;
   width: 310px;
   background: #FFF;
   padding: 15px;
@@ -553,11 +553,14 @@ textarea.input {
   right: 0;
   opacity: 0;
   visibility: hidden;
+  margin-top: 20px;
+
 }
 
 .dropdown.open>.cart-dropdown {
   opacity: 1;
   visibility: visible;
+
 }
 
 .cart-dropdown .cart-list {
