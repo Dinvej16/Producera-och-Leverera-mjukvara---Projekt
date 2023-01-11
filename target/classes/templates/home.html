@@ -31,7 +31,6 @@ th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
                 </div>
                 <!-- /section title -->
                 <!-- Products tab & slick -->
-                <div th:each="item : ${products}">
 
                 <div class="col-md-12">
                     <div class="row">
@@ -40,6 +39,7 @@ th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
                             <div id="tab1" class="tab-pane active">
                                 <div class="products-slick" data-nav="#slick-nav-1">
                                     <!-- product -->
+                                    <div th:each="item : ${products}">
                                     <div class="product">
                                         <div class="product-img">
                                             <img src="/images/product01.png" alt="">

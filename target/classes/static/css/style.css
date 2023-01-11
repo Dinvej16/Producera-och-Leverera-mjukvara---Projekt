@@ -1163,6 +1163,8 @@ textarea.input {
 
 .products-slick .product.slick-slide {
   margin: 15px;
+
+
 }
 
 .products-tabs>.tab-pane {
@@ -1173,6 +1175,7 @@ textarea.input {
   overflow-y: hidden;
   padding-bottom: 60px;
   margin-bottom: -60px;
+
 }
 
 .products-tabs>.tab-pane.active {

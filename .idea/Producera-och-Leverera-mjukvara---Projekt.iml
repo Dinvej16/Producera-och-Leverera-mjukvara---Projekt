@@ -15,7 +15,7 @@
         <setting name="validation-enabled" value="true" />
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
-          <factory-entry name="Producera-och-Leverera-mjukvara---Projekt" />
+          <factory-entry name="Producera-och-Leverera-mjukvara---Projekt" value="3f06bb16-38ee-48bf-a90f-017ae9cba0d1" />
           <factory-entry name="entityManagerFactory" />
         </datasource-mapping>
         <naming-strategy-map />
