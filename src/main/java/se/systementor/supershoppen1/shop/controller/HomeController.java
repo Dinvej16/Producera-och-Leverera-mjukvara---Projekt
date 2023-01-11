@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import se.systementor.supershoppen1.shop.model.Product;
 import se.systementor.supershoppen1.shop.services.ArticleService;
+import se.systementor.supershoppen1.shop.services.OrderDetailsService;
 import se.systementor.supershoppen1.shop.services.ProductService;
 import se.systementor.supershoppen1.shop.services.SubscriberService;
 
@@ -20,14 +21,15 @@ import se.systementor.supershoppen1.shop.services.SubscriberService;
 public class HomeController {
     private  ProductService productService;
     private SubscriberService subscriberService;
-
+    private OrderDetailsService orderDetailsService;
     private ArticleService articleService;
 
     @Autowired
-    public HomeController(ProductService productService, SubscriberService subscriberService, ArticleService articleService) {
+    public HomeController(ProductService productService, SubscriberService subscriberService, ArticleService articleService, OrderDetailsService orderDetailsService) {
         this.productService = productService;
         this.subscriberService = subscriberService;
         this.articleService = articleService;
+        this.orderDetailsService = orderDetailsService;
     }    
 
     @GetMapping(path="/")
@@ -67,6 +69,23 @@ public class HomeController {
 
 
         return "articles";
+    }
+    @GetMapping("/orders")
+    String getOrders(Model model){
+        model.addAttribute("orders", orderDetailsService.getAllOrderDetails());
+        return "orders";
+    }
+
+    @GetMapping("/orders/{id}")
+    String getOrdersFromProduct(Model model, @PathVariable("id") Integer id) {
+        model.addAttribute("products", orderDetailsService.getProductsById(id));
+        model.addAttribute("price", orderDetailsService.getFullPrice(id));
+        return "order-product-page";
+    }
+
+    @GetMapping("/account")
+    String getAccount(){
+        return "myAccount";
     }
 
     @GetMapping(path="/test2")

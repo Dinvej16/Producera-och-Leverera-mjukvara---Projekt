@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+
+</head>
+<body>
+<div class="container">
+    <ul th:each="item : ${orders}">
+        <li >
+            <a th:href="@{'/orders/' + ${item.getId()} }">Order</a>
+            <br>
+        </li>
+    </ul>
+
+    <a href="/"> <button>Home</button></a>
+</div>
+</body>
+</html>
