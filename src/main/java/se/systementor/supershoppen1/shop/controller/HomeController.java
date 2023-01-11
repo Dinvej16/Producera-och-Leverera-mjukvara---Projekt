@@ -83,6 +83,11 @@ public class HomeController {
         return "order-product-page";
     }
 
+    @GetMapping("/account")
+    String getAccount(){
+        return "myAccount";
+    }
+
     @GetMapping(path="/test2")
     List<Product> getAll(){
         return productService.getAll();
