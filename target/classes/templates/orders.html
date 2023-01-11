@@ -9,26 +9,12 @@
 </head>
 <body>
 <div class="container">
-    <h1>Orders</h1>
-    <table class="table">
-        <thead>
-        <tr>
-            <th scope="col">Name</th>
-            <th scope="col">Price</th>
-
-
-        </tr>
-        </thead>
-        <tbody>
-        <tr th:each="item : ${orders}">
-            <td th:text="${item.getName()}"></td>
-            <td th:text="${item.getPrice()}"></td>
-
-
-        </tr>
-        <td th:text="${price}"></td>
-        </tbody>
-    </table>
+    <ul th:each="item : ${orders}">
+        <li >
+            <a th:href="@{'/orders/' + ${item.getId()} }">Order</a>
+            <br>
+        </li>
+    </ul>
 
     <a href="/"> <button>Home</button></a>
 </div>

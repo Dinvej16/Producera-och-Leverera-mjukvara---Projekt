@@ -16,7 +16,14 @@ public class OrderDetailsService {
     @Autowired
     OrderDetailsRepository orderDetailsRepository;
 
-    public List<Product> getOrdersById(Integer id) {
+
+    public List<OrderDetails> getAllOrderDetails() {
+        Iterable<OrderDetails> orderDetails = orderDetailsRepository.findAll();
+        return (List<OrderDetails>) orderDetails;
+        }
+
+
+    public List<Product> getProductsById(Integer id) {
         Optional<OrderDetails> maybeOrder = orderDetailsRepository.findById(id);
         if (maybeOrder.isPresent()) {
             OrderDetails order = maybeOrder.get();
@@ -38,4 +45,5 @@ public class OrderDetailsService {
     }
         return null;
 }
+
 }

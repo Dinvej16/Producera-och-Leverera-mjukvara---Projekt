@@ -70,11 +70,17 @@ public class HomeController {
 
         return "articles";
     }
-    @GetMapping("/order/{id}")
-    String getOrders(Model model, @PathVariable Integer id){
-        model.addAttribute("orders", orderDetailsService.getOrdersById(id));
-        model.addAttribute("price", orderDetailsService.getFullPrice(id));
+    @GetMapping("/orders")
+    String getOrders(Model model){
+        model.addAttribute("orders", orderDetailsService.getAllOrderDetails());
         return "orders";
+    }
+
+    @GetMapping("/orders/{id}")
+    String getOrdersFromProduct(Model model, @PathVariable("id") Integer id) {
+        model.addAttribute("products", orderDetailsService.getProductsById(id));
+        model.addAttribute("price", orderDetailsService.getFullPrice(id));
+        return "order-product-page";
     }
 
     @GetMapping(path="/test2")
