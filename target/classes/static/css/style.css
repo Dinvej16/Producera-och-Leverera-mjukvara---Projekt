@@ -2203,3 +2203,20 @@ textarea.input {
 .error {
   color:#ef233c;
 }
+
+.article-box{
+  background-color: #ef233c;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  padding: 25px;
+
+}
+
+.article-h3 {
+  color: white;
+}
+
+.article-a{
+  color: white;
+}

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 import org.springframework.web.bind.annotation.PathVariable;
 import se.systementor.supershoppen1.shop.model.Product;
+import se.systementor.supershoppen1.shop.services.ArticleService;
 import se.systementor.supershoppen1.shop.services.ProductService;
 import se.systementor.supershoppen1.shop.services.SubscriberService;
 
@@ -20,10 +21,13 @@ public class HomeController {
     private  ProductService productService;
     private SubscriberService subscriberService;
 
+    private ArticleService articleService;
+
     @Autowired
-    public HomeController(ProductService productService, SubscriberService subscriberService) {
+    public HomeController(ProductService productService, SubscriberService subscriberService, ArticleService articleService) {
         this.productService = productService;
         this.subscriberService = subscriberService;
+        this.articleService = articleService;
     }    
 
     @GetMapping(path="/")
@@ -43,13 +47,26 @@ public class HomeController {
 
             }
             model.addAttribute("products", productService.getTenLatestProducts());
-            return "home";
+            model.addAttribute("articles", articleService.getArticleList());
+
+        return "home";
         }
 
     @GetMapping("/product/{id}")
     String getProductById(@PathVariable("id") Integer id, Model model){
         model.addAttribute("product", productService.getById(id));
+        model.addAttribute("articles", articleService.getArticleList());
+
         return "product-page";
+    }
+
+    @GetMapping("/article/{id}")
+    String getArticlesById(Model model, @PathVariable("id") Integer id){
+        model.addAttribute("article", articleService.getArticleByID(id));
+        model.addAttribute("articles", articleService.getArticleList());
+
+
+        return "articles";
     }
 
     @GetMapping(path="/test2")
