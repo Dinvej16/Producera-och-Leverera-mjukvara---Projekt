@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      th:replace="~{fragments/layouttemplate :: layout (~{::body})}">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+
+</head>
+<body>
+<div class="container">
+    <h1>Orders</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Price</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="item : ${orders}">
+            <td th:text="${item.getName()}"></td>
+            <td th:text="${item.getPrice()}"></td>
+
+
+        </tr>
+        <td th:text="${price}"></td>
+        </tbody>
+    </table>
+
+    <a href="/"> <button>Home</button></a>
+</div>
+</body>
+</html>
